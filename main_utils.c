@@ -2,7 +2,7 @@
 #include <math.h>
 #include <stdio.h>
 
-double integral_trapeze(double (*fn)(double x), double interval_start,\
+double trapezoidal_rule(double (*fn)(double x), double interval_start,\
                         double interval_end, double precision) {
         
         double res = 0.;
@@ -47,11 +47,11 @@ double resolution(double (*fn_ptr)(double x), double a, double b, double epsilon
        }while((fabs(fn_ptr(a)-fn_ptr(b))) > epsilon);
        return res;
 }
-double integral_carre(double (*fn_ptr)(double x), double a, double b, double n) {
+double rectangular_rule(double (*fn_ptr)(double x), double a, double b, double n) {
        double res = 0.;
        double i = (b-a)/n;
-       printf("INCREMENT: %.19lf\n", i);
-       while(a < b) {
+       printf("INCREMENT: %lf\n", i);
+       while(a < (b-i)) {
                 res += fn_ptr(a)*i;
                 a += i;
        }
