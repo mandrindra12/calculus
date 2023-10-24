@@ -12,13 +12,6 @@ double trapezoidal_rule(double (*fn)(double x), double interval_start,\
                 interval_start += inc;
         }while(interval_start < (interval_end-inc));
 
-        /* 
-        for(int t = 1; t < n-1; ++t){
-                res += 
-        }
-         */
-
-
         return fabs(res);
 }
 
@@ -28,9 +21,6 @@ double f(double x) {
 }
 double g(double x) {
         return exp(x)-2;
-}
-double h(double x) {
-        return x;
 }
 double resolution(double (*fn_ptr)(double x), double a, double b, double epsilon) {
        double res = 0.2;
@@ -44,16 +34,20 @@ double resolution(double (*fn_ptr)(double x), double a, double b, double epsilon
                       a = center;
                       res = center;
               }
-       }while((fabs(fn_ptr(a)-fn_ptr(b))) > epsilon);
+       }while((fabs(a-b)) > epsilon);
        return res;
 }
 double rectangular_rule(double (*fn_ptr)(double x), double a, double b, double n) {
        double res = 0.;
        double i = (b-a)/n;
-       printf("INCREMENT: %lf\n", i);
        while(a < (b-i)) {
                 res += fn_ptr(a)*i;
                 a += i;
        }
        return fabs(res);
+}
+double newtons_method(double (*fn_ptr)(double x), double int_start, double int_end, double prec){
+        double res = 0.;
+        
+        return res;
 }
