@@ -46,7 +46,8 @@ double rectangular_rule(double (*fn_ptr)(double x), double a, double b, double n
        }
        return fabs(res);
 }
-double newtons_method(double (*fn_ptr)(double x), double int_start, double int_end, double prec){
+//NR: Newton-Raphson
+double NR_method(double (*fn_ptr)(double x), double int_start, double int_end, double prec){
         double res = 0.;
         
         return res;
