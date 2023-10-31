@@ -18,10 +18,11 @@ double dichotomie(double (*fn_ptr)(double x), double a, double b, double epsilon
        return res;
 }
 // dfn= dy/dx
-double newton_raphson(double (*fn)(double), double (*dfn)(double), double first_aprox, double eps){
+double newton_raphson(double (*fn)(double), double (*dfn)(double), double aprox, double eps){
         double ans = 0.;
-        while(fabs(first_aprox - ans) > eps){
-
+        while(fabs(fn(ans)) > eps){
+                ans = aprox - (fn(aprox)/dfn(aprox));
+                aprox = ans;
         }
         return ans;
 }
