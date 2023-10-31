@@ -2,6 +2,7 @@
 #define FUNC_H
 double f(double);
 double g(double);
-double h(double x);
-
+//derivees
+double df(double);
+double dg(double);
 #endif

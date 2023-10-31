@@ -8,3 +8,10 @@ double f(double x) {
 double g(double x) {
         return exp(x)-2;
 }
+
+double df(double x) {
+        return 1/x;
+}
+double dg(double x) {
+        return exp(x);
+}
