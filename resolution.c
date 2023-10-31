@@ -30,7 +30,6 @@ double newton_raphson(double (*fn)(double), double (*dfn)(double), double aprox,
 double secant_method(double (*fn)(double x), double i_start, double i_end, double eps){
         double ans = 0., x0 = 0.;
         while(fabs(fn(x0))>eps) {
-                //printf("x0: %lf, ans: %lf, start:%lf, end: %lf\n", x0 , ans, i_start, i_end);
                 x0 = i_start - ((i_end-i_start)*fn(i_start))/(fn(i_end)-fn(i_start));
                 if(fn(x0)*fn(i_start)<=0) {
                         ans = x0;
