@@ -1,3 +1,2 @@
-# calculus
-##UNDER DEVELOPEMENT
-Some implementation of different approach on calculus 
+#CALCULUS
+#SOME MATHS (ROOT AND CALCULUS)
