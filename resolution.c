@@ -26,7 +26,7 @@ double newton_raphson(double (*fn)(double), double (*dfn)(double), double aprox,
         }
         return ans;
 }
-
+//secant
 double secant_method(double (*fn)(double x), double i_start, double i_end, double eps){
         double ans = 0., x0 = 0.;
         while(fabs(fn(x0))>eps) {
