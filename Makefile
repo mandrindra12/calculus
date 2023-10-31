@@ -2,7 +2,7 @@ CFLAGS=-Wall -lm
 
 all: main
 
-main: main.c main_utils.c
+main: main.c function.c resolution.c
 	gcc -o $@ $^ $(CFLAGS)
 
 clean:
