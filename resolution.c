@@ -17,7 +17,7 @@ double dichotomie(double (*fn_ptr)(double x), double a, double b, double epsilon
         }
        return res;
 }
-// dfn= dy/dx
+// df= dy/dx
 double newton_raphson(double (*fn)(double), double (*dfn)(double), double aprox, double eps){
         double ans = 0.;
         while(fabs(fn(ans)) > eps){
