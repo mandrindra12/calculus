@@ -1,25 +1,24 @@
 #include "calculus.h"
 #include <math.h>
-double trapezoidal_rule(double (*fn)(double x), double interval_start,\
-                        double interval_end, double precision) {
+double trapezoidal_rule(double (*fn)(double x), double i_start, double i_end, double n) {
         
         double res = 0.;
-        double inc = (interval_end - interval_start) / precision;
-        do{
-                res += ((fn(interval_start+inc)+fn(interval_start))*inc) / 2;
-                interval_start += inc;
-        }while(interval_start < (interval_end-inc));
+        double seg = (i_end - i_start) / n;
+        res = fn(i_start) + fn(i_end);
+        for(int i = 1; i < n-1; ++i){
+                res += 2*fn(i_start+i*seg);
+        }
+        res *= (seg/2);
 
         return fabs(res);
 }
 
 double rectangular_rule(double (*fn_ptr)(double x), double a, double b, double n) {
-       double res = 0.;
+       double res = fn_ptr(a);
        double i = (b-a)/n;
-       while(a < (b-i)) {
-                res += fn_ptr(a)*i;
-                a += i;
+       for(int j = 0; j < n-1; ++j) {
+                res += fn_ptr(a+i*j);
        }
-       return fabs(res);
+       return fabs(res)*i;
 }
 
