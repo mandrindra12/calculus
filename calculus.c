@@ -1,6 +1,5 @@
 #include <math.h>
 #include <stdint.h>
-#include <stdio.h>
 
 double trapezoidal_rule(double (*fn)(double x), double i_start, double i_end, uint32_t n) {
         
